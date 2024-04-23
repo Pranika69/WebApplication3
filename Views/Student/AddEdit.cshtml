@@ -1,0 +1,73 @@
+﻿@model WebApplication3.Models.Student
+@if(Model.Id>0){
+<div>
+    <p>Update</p>
+</div>
+
+}
+else{
+<div>
+    <p>Create</p>
+</div>
+}
+
+
+<form method="post" asp-action="AddEdit">
+    <input asp-for="Id" hidden />
+    <div class="form-group">
+        <label asp-for="FullName">Full Name</label>
+        <input asp-for="FullName" class="form-control" placeholder="Enter Full Name">
+        <span asp-validation-for="FullName"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RollNO">RollNO</label>
+        <input asp-for="RollNO" class="form-control" placeholder="Enter RollNO">
+        <span asp-validation-for="RollNO"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Class">Class</label>
+        <input asp-for="Class" class="form-control" placeholder="Enter Class">
+        <span asp-validation-for="Class"> </span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="Enter Email">
+        <span asp-validation-for="Email"> </span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber ">PhoneNumber</label>
+        <input asp-for="PhoneNumber" class="form-control" placeholder="Enter Phone Number">
+        <span asp-validation-for="PhoneNumber"> </span>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+
+            <a class="btn mt-2 btn-secondary" asp-action="Index">Back to List</a>
+
+        </div>
+
+        @if (Model.Id > 0)
+        {
+            <div class="col-6">
+                <button class="btn mt-2 btn-primary  float-end" type="submit">Update</button>
+            </div>
+        }
+        else
+        {
+            <div class="col-6">
+                <button class="btn mt-2 btn-primary  float-end" type="submit">Create</button>
+            </div>
+        }
+
+
+
+    </div>
+
+</form>
+
+
+
